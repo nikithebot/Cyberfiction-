@@ -46,6 +46,7 @@ window.addEventListener("resize", function () {
   render();
 });
 
+
 function files(index) {
   var data = `
      ./male0001.png
@@ -378,7 +379,8 @@ gsap.to(imageSeq, {
     scrub: 0.15,
     trigger: `#page>canvas`,
     start: `top top`,
-    end: `600% top`,
+    //end: `600% top`,
+    end: () => `${frameCount * 2}% top`, // responsive
     scroller: `#main`,
   },
   onUpdate: render,
@@ -386,8 +388,16 @@ gsap.to(imageSeq, {
 
 images[1].onload = render;
 
+// function render() {
+//   scaleImage(images[imageSeq.frame], context);
+// }
+
+
 function render() {
-  scaleImage(images[imageSeq.frame], context);
+  const img = images[imageSeq.frame];
+  if (img && img.complete) {
+    scaleImage(img, context);
+  }
 }
 
 function scaleImage(img, ctx) {
