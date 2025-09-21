@@ -8,8 +8,6 @@ It demonstrates how to integrate **GSAP**, **ScrollTrigger**, and **Locomotive S
 - Scroll-triggered animations using GSAP ScrollTrigger
 - Canvas-based image sequence rendering
 - Pinning & scrubbing animations for storytelling
-<<<<<<< HEAD
 - Optimized scaling and rendering logic
-=======
 - Optimized scaling and rendering logic
 >>>>>>> f2e08649bbeafe2f6863e0506a124618ad8059a1
